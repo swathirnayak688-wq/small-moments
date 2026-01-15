@@ -66,8 +66,32 @@ photo.style.display = "none";
 video.style.display = "none";
 
 if (moments[index].image) {
-  photo.src = moments[index].image;
-  photo.style.display = "block";
+ function nextMoment() {
+  const moment = moments[index];
+
+  const dateEl = document.getElementById("date");
+  const textEl = document.getElementById("text");
+  const photo = document.getElementById("photo");
+  const video = document.getElementById("video");
+
+  dateEl.innerText = moment.date;
+  textEl.innerText = moment.text;
+
+  // hide both first
+  photo.style.display = "none";
+  video.style.display = "none";
+
+  if (moment.image) {
+    photo.src = moment.image;
+    photo.style.display = "block";
+  }
+
+  if (moment.video) {
+    video.src = moment.video;
+    video.style.display = "block";
+  }
+
+  index++;
 }
 
 if (moments[index].video) {
