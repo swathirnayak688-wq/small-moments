@@ -103,3 +103,4 @@ if (moments[index].video) {
 }
 
 nextMoment();
+window.onload = nextMoment;
