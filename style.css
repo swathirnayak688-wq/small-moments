@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+}
+
+.container {
+  max-width: 650px;
+  padding: 40px;
+  text-align: center;
+}
+
+.moment {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #222;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  white-space: pre-line;
+}
+
+.photo {
+  max-width: 100%;
+  margin-top: 25px;
+  border-radius: 12px;
+  display: none;
+}
+
+button {
+  margin-top: 40px;
+  padding: 10px 30px;
+  font-size: 16px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
