@@ -11,8 +11,8 @@ const moments = [
     image: "images/ikea.jpg"
   },
   {
-    text: "29 May.\nAn RCB screening surrounded by noise.\nSomehow, holding your hand felt calmer than everything else.",
-    image: "images/rcb.jpg"
+  text: "29 May.\nAn RCB screening surrounded by noise.\nSomehow, holding your hand felt calmer than everything else.",
+  video: "videos/rcb.mp4"
   },
   {
     text: "30 May.\nThe first hug.\nIt wasn’t rushed.\nIt just felt safe."
@@ -60,12 +60,20 @@ function nextMoment() {
 
   momentDiv.textContent = moments[index].text;
 
-  if (moments[index].image) {
-    photo.src = moments[index].image;
-    photo.style.display = "block";
-  } else {
-    photo.style.display = "none";
-  }
+  const video = document.getElementById("video");
+
+photo.style.display = "none";
+video.style.display = "none";
+
+if (moments[index].image) {
+  photo.src = moments[index].image;
+  photo.style.display = "block";
+}
+
+if (moments[index].video) {
+  video.src = moments[index].video;
+  video.style.display = "block";
+}
 
   index = (index + 1) % moments.length;
 }
